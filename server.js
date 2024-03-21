@@ -1,5 +1,6 @@
 const { log } = require('console');
 const express = require('express');
+const cors = require('cors')
 const http = require('http');
 const app = express();
 const server = http.createServer(app);
@@ -9,6 +10,8 @@ const io = require('socket.io')(server, {
     methods: ["GET", "POST"] // Autorise uniquement les méthodes GET et POST
   }
 });
+
+app.use(cors())
 
 let connectedPlayers = 0; // Variable pour compter le nombre de joueurs connectés
 
