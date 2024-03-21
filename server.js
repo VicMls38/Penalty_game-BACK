@@ -5,7 +5,7 @@ const app = express();
 const server = http.createServer(app);
 const io = require('socket.io')(server, {
   cors: {
-    origin: "http://localhost:5173", // Autorise uniquement les requêtes provenant de cette origine
+    origin: "https://penalty-game-back.onrender.com", // Autorise uniquement les requêtes provenant de cette origine
     methods: ["GET", "POST"] // Autorise uniquement les méthodes GET et POST
   }
 });
